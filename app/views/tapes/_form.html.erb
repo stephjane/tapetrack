@@ -1,0 +1,38 @@
+<%= form_for(@tape) do |f| %>
+  <% if @tape.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tape.errors.count, "error") %> prohibited this tape from being saved:</h2>
+
+      <ul>
+      <% @tape.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel new-tape-panel">
+        <div class="panel-body">
+          <div class="field">
+            <%= f.text_field :title, placeholder: "Tape Title" %>
+          </div><br/>
+          <div class="field">
+            <%= f.text_area :note, placeholder: "Send a note with your tape" %>
+          </div><br/>
+          <div class="field">
+            <%= f.hidden_field :user_id, value: current_user.id %>
+          </div><br/>
+          <div class="actions">
+            <%= f.submit "Create", class: "btn btn-sm btn-primary"%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel-body">
+      <%= image_tag("blacktape.png") %>
+    </div>
+    </div>
+  </div>
+<% end %>

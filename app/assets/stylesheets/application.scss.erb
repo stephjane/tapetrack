@@ -1,0 +1,73 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+ */
+.cant-see-me {
+	display: none;
+}
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@font-face {
+        font-family: "coffee_house";
+        src: url(assets/fonts/coffee_house.ttf);
+    }
+
+#font {
+        font-family: "coffee_house";
+    }
+
+.tape_name{
+	font-size: 30px;
+	color: #000000;
+}
+.tape_name_home{
+	color: #000000;
+	font-size: 20px;
+}
+
+.note {
+	font-size: 15px;
+	color: #000000;
+	font-style: oblique;
+	text-align: center;
+}
+
+.track_name{
+	color: #686B6B;
+	font-style: serif; 
+}
+.image-background{
+	background: url(<%= asset_path "wood.jpg"%>) no-repeat;
+}
+
+.modal-footer{
+	background: url(<%= asset_path "paper.jpg"%>) no-repeat;
+	background-size:cover; 
+}
+.new-tape{
+	background: url(<%= asset_path "paper.jpg"%>) no-repeat;
+	background-size:cover;
+}
+.modal-header{
+	background: url(<%= asset_path "tape3.jpg"%>) no-repeat;
+	background-size:cover;
+}
+
+.background{
+
+}
+
+.panel{
+	background-color: rgba(51,0,102,.0)
+}
