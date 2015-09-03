@@ -1,26 +1,27 @@
-<div class="col-sm-4">
-  <div class="panel panel-primary">
-    <center><div class="tape_name">
-      <%= @tape.title%>
-    </div></center>
-    <center><div>
-      <%= link_to 'Edit', edit_tape_path(@tape) %> 
-    </div></center>
-    <div class="panel panel-body">
-      <h4> Add some tracks </h4>
-      <div>
-      	<%= render 'songs/form' %>
-      </div>
-    </div>
+<h4>Add Some Tracks</h4><br/>
+
+<div class="row">
+  <div class="col-sm-3">
   </div>
-</div>
+  <div class="col-sm-4">
+    <center>
+      <div class="panel panel-default panel-two">
+          <p class="tape_name"><%=@tape.title%>
+          <%= link_to "", edit_tape_path, class: "glyphicon glyphicon-edit"%></p>
+          <div>
+          	<%= render 'songs/form' %>
+          </div>
+      </div>
+    </center>
+  </div>
 
-<div class="col-sm-4">
-  <h3> Tracks </h3>
-  <% @tape.songs.each do |song| %>
-    <p><strong><%= song.name %></strong>
-    <%= link_to '', song, class: "glyphicon glyphicon-remove", method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div class="col-sm-4">
+    <h3> Tracks </h3>
+      <% @tape.songs.each do |song| %>
+            <p class="track_name"><%= song.name %>
+            <%= link_to '', song, class: "glyphicon glyphicon-remove", method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <%end%>
+  </div>
 
-  <%end%>
 </div>
 

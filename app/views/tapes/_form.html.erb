@@ -11,28 +11,30 @@
     </div>
   <% end %>
   <div class="row">
-    <div class="col-md-8">
-      <div class="panel new-tape-panel">
-        <div class="panel-body">
-          <div class="field">
-            <%= f.text_field :title, placeholder: "Tape Title" %>
-          </div><br/>
-          <div class="field">
-            <%= f.text_area :note, placeholder: "Send a note with your tape" %>
-          </div><br/>
-          <div class="field">
-            <%= f.hidden_field :user_id, value: current_user.id %>
-          </div><br/>
-          <div class="actions">
-            <%= f.submit "Create", class: "btn btn-sm btn-primary"%>
-          </div>
+      <div class="col-md-4">
+      </div>
+    <center>
+      <div class="col-md-4">
+        <div class="panel panel-default panel-two">
+            <p class="tape_name">Create A Tape</p>
+            <div class="field">
+              <%= f.text_field :title, placeholder: "Tape Title" %>
+            </div><br/>
+            <div class="field">
+              <%= f.text_area :note, placeholder: "Send a note with your tape" %>
+            </div><br/>
+            <div class="field">
+              <%= f.hidden_field :user_id, value: current_user.id %>
+            </div>
+            <div class=>
+              <%= image_tag("blacktape.png") %>
+            </div><br/>
+            <div class="actions">
+              <%= f.submit "Create", class: "btn btn-sm btn-warning"%>
+            </div><br/>
         </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="panel-body">
-      <%= image_tag("blacktape.png") %>
-    </div>
-    </div>
+    </center>
   </div>
+
 <% end %>

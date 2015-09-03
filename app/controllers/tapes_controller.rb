@@ -9,6 +9,7 @@ class TapesController < ApplicationController
 
   def share
     @tape = Tape.find(params[:id])
+    @friend = Friend.new
   end
   # GET /tapes/1
   # GET /tapes/1.json

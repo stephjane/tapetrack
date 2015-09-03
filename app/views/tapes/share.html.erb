@@ -1,16 +1,32 @@
 
+<% if user_signed_in?%>
+<h4>Share <%= @tape.title %> with a friend!</h4>
+<%else%>
+<h3>Create an account or sign in to create your own mix!</h3>
+<%end%>
+      
       <div class="col-md-3">
-        <div class = "panel panel-sm">
-            Tape: <%= @tape.title %><br/>
-            <%= link_to '', @tape, class: "glyphicon glyphicon-music"%>
+      </div>
+      <div class="col-md-3">
+        <div class = "panel">
             <a href="#" data-toggle="modal" data-target="#myModal_<%= @tape.id%>">
-                <span class="glyphicon glyphicon-play"></span>
+                <span class="glyphicon glyphicon-play btn btn-sm btn-warning"></span>
             </a>
           <div class = "panel-body, float-left">
             <%= image_tag ('blacktape.png')%>
           </div>          
         </div>
       </div>
+
+      <% if user_signed_in? %>
+        <div class="col-md-3">
+          <div class="panel panel-default panel-two"><br/>
+            <center>
+              <%= render 'friends/form'%>
+            </center>
+          </div>
+       </div>
+     <%end%>
 
        <!-- Modal -->
       <div class="modal fade" id="myModal_<%=@tape.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

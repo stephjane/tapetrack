@@ -18,18 +18,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@font-face {
-        font-family: "coffee_house";
-        src: url(assets/fonts/coffee_house.ttf);
-    }
-
-#font {
-        font-family: "coffee_house";
-    }
-
+h4{
+	text-align: center;
+	font-size: 50px;
+}
+h6{
+	font-size: 20px;
+}
+.glyphicon{
+	color:#000000
+}
+.glyphicon-edit{
+	font-size: 15px;
+}
+.glyphicon-remove{
+}
 .tape_name{
 	font-size: 30px;
 	color: #000000;
+	text-align: center;
 }
 .tape_name_home{
 	color: #000000;
@@ -44,20 +51,18 @@
 }
 
 .track_name{
-	color: #686B6B;
-	font-style: serif; 
+	font-style: serif;
+	font-size: 17px; 
+	font-style: bold;
+	color:#000000;
 }
 .image-background{
-	background: url(<%= asset_path "wood.jpg"%>) no-repeat;
+	background: url(<%= asset_path "posters.png"%>) no-repeat;
 }
 
 .modal-footer{
 	background: url(<%= asset_path "paper.jpg"%>) no-repeat;
 	background-size:cover; 
-}
-.new-tape{
-	background: url(<%= asset_path "paper.jpg"%>) no-repeat;
-	background-size:cover;
 }
 .modal-header{
 	background: url(<%= asset_path "tape3.jpg"%>) no-repeat;
@@ -65,9 +70,16 @@
 }
 
 .background{
-
+	background: url(<%= asset_path "wood.png"%>);
+	background-size:cover;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
 }
 
 .panel{
 	background-color: rgba(51,0,102,.0)
+}
+.panel-two{
+	background-color: rgba(102,102,102,.5);
 }

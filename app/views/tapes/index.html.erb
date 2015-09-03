@@ -4,59 +4,60 @@
   <% end %>
 
   <% if user_signed_in? %>
-  <div class = "row">
+    <div class = "row">
       <% @tapes.each do |tape| %>
         <div class="col-md-3">
           <div class = "panel panel-sm">
-              Tape: <%= tape.title %><br/>
-              <%= link_to '', tape, class: "glyphicon glyphicon-music"%>
-              <%= link_to '', share_path(id: tape.id), class: "glyphicon glyphicon-share"%>
-              <%= link_to '', tape, class: "glyphicon glyphicon-remove", method: :delete, data: { confirm: 'Are you sure?' } %>
-              <a href="#" data-toggle="modal" data-target="#myModal_<%= tape.id%>">
-                  <span class="glyphicon glyphicon-play"></span>
-              </a>
-            <div class = "panel-body, float-left">
+            <h6><%= tape.title %></h6>
               <%= image_tag ('blacktape.png')%>
+            <div class = "panel-body, float-left">
+              <%= link_to '', tape, class: "glyphicon glyphicon-music btn btn-sm btn-warning"%>
+              <%= link_to '', share_path(id: tape.id), class: "glyphicon glyphicon-share btn btn-sm btn-warning"%>
+              <%= link_to '', tape, class: "glyphicon glyphicon-remove btn btn-sm btn-warning", method: :delete, data: { confirm: 'Are you sure?' } %>
+              <a href="#" data-toggle="modal" data-target="#myModal_<%= tape.id%>">
+                    <span class="glyphicon glyphicon-play btn btn-sm btn-warning"></span>
+              </a>
             </div>          
           </div>
         </div>
 
-        <!-- Modal -->
+          <!-- Modal -->
         <div class="modal fade" id="myModal_<%=tape.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog modal-background" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><br/><br/></br>
-                <center><h4 class="modal-title" id="myModalLabel"></h4></center>
-              </div>
-              <div class="modal-body">
-                <div class="container-fluid">
-                      <% tape.songs.each do |song| %>
-                        <div class="row">
-                        <div class="col-md-5 track_name">
-                        <p><%= song.name %></p><!-- <button type="button" class= "glyphicon glyphicon-play"></button></p> -->
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><br/><br/></br>
+                  <center><h4 class="modal-title" id="myModalLabel"></h4></center>
+                </div>
+                <div class="modal-body">
+                  <div class="container-fluid">
+                    <% tape.songs.each do |song| %>
+                      <div class="row">
+                        <div class="col-md-5">
+                          <ul>
+                            <li><%= song.name %></li>
+                          </ul>
                         </div>
                         <div class="col-md-7">
-                        <audio controls <source src="<%= song.audio.url %>" type="audio/mpeg" />
-                        </audio>
+                          <audio controls <source src="<%= song.audio.url %>" type="audio/mpeg" />
+                          </audio>
                         </div>
-                        </div>
-                      <%end%>
-                </div>
-              </div>  
-              <div class="modal-footer">
-                <div class="note">
-                  <%= tape.note %>
+                      </div>
+                    <%end%>
+                  </div>
+                </div>  
+                <div class="modal-footer">
+                  <div class="note">
+                    <%= tape.note %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
+        </div>       
       <% end %>
-  </div>
+    </div>
   <%else%>
-  <p>Add Some Tapes</p>
+    <p>Add Some Tapes</p>
   <% end %>
 
 
